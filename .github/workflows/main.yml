@@ -64,7 +64,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull atonkova/infra_actions
+            sudo docker pull atonkova/infra_actions:v1.10.2022
             # остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 atonkova/infra_actions
+            sudo docker run --rm -d -p 5000:5000 atonkova/infra_actions:v1.10.2022
